@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: dockerprac-backend
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongo:27017/dockerprac
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    container_name: dockerprac-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  mongo:
+    image: mongo:7
+    container_name: dockerprac-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
