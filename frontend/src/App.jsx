@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const apiUrl = import.meta.env.VITE_API_URL || "http://13.62.99.217:4000";
+const apiUrl = import.meta.env.VITE_API_URL || "/api";
 
 const priorities = [
   { value: "low", label: "Low" },
