@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8080";
+const apiUrl = import.meta.env.VITE_API_URL || "";
 
 const priorities = [
   { value: "low", label: "Low" },
