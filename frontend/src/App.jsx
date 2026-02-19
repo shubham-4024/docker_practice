@@ -155,7 +155,7 @@ export default function App() {
     const doneCount = tasks.filter((task) => task.status === "done").length;
     return Math.round((doneCount / tasks.length) * 100);
   }, [tasks]);
-  console.log('Working!!')
+  console.log('Working!!!')
   return (
     <div
       style={{
